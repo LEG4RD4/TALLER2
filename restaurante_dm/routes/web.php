@@ -2,29 +2,23 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\BuzonController;
 
-// 1. Inicio
+// --- SECCIÓN DE PRODUCTOS Y NAVEGACIÓN ---
 Route::get('/', [ProductoController::class, 'index'])->name('inicio');
-
-// 2. Nosotros
 Route::get('/nosotros', [ProductoController::class, 'nosotros'])->name('nosotros');
-
-// 3. Menú (Catálogo visual)
 Route::get('/menu', [ProductoController::class, 'menu'])->name('menu');
-
-// 4. Contacto (Apunta a mensaje.blade.php)
-Route::get('/contacto', [ProductoController::class, 'contacto'])->name('mensaje');
-
-// 5. Pedidos (Formulario y Tabla)
-// IMPORTANTE: He cambiado el nombre a singular 'pedido.index' 
-// para que coincida con el error que te salía en el menú.
 Route::get('/pedidos', [ProductoController::class, 'pedidos'])->name('pedido.index');
 
-// 6. Acción de Guardar
+// Guardar Pedidos
 Route::post('/pedidos/guardar', [ProductoController::class, 'store'])->name('producto.store');
 Route::post('/agregar-al-pedido', [ProductoController::class, 'agregarAlPedido'])->name('agregar.pedido');
-// Enviar PQRS
-Route::post('/enviar-pqrs', [ProductoController::class, 'storeMensaje'])->name('pqrs.store');
 
 
-Route::get('/central-mensajes', [ProductoController::class, 'buzon'])->name('buzon.index');
+// --- SECCIÓN DE BUZÓN (PQRS) ---
+
+// 1. Esta es la que arregla tu error del Navbar (Línea 70)
+Route::get('/central-mensajes', [BuzonController::class, 'index'])->name('buzon.index');
+
+// 2. Esta es la que guarda los datos en pgAdmin
+Route::post('/enviar-pqrs', [BuzonController::class, 'store'])->name('pqrs.store');

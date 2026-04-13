@@ -9,12 +9,10 @@
         body { background-color: #050505; color: #fff; font-family: 'Rajdhani', sans-serif; }
         .navbar { background: #000; border-bottom: 2px solid #ff0055; }
         .navbar-brand { font-family: 'Permanent Marker', cursive; color: #ff0055 !important; }
-
         .main-container { margin-top: 40px; background: #000; padding: 20px; }
 
-        /* --- TABLA DE ALTO IMPACTO --- */
-        .table { border-collapse: separate; border-spacing: 0 15px; }
-
+        /* --- TABLA --- */
+        .table { border-collapse: separate; border-spacing: 0 15px; width: 100%; }
         .table thead th {
             background-color: #ff0055 !important;
             color: #fff !important;
@@ -24,66 +22,60 @@
             border: none;
             text-align: center;
         }
-
         .table tbody tr {
-            background-color: #111 !important;
-            border-radius: 10px;
-            transition: 0.3s;
+            background-color: #fff !important; 
+            border-radius: 0px;
         }
-
         .table td {
-            padding: 20px !important;
+            padding: 15px !important;
             border: none;
             vertical-align: middle;
+            color: #000; 
         }
 
-        /* --- ETIQUETAS CON TEXTO NEGRO (PARA QUE NO SE OPAQUE) --- */
-        .badge-nombre {
-            background-color: #fff; /* Blanco puro */
-            color: #000 !important; /* TEXTO NEGRO */
-            padding: 5px 15px;
-            font-weight: 900;
-            border-radius: 4px;
+        /* --- BADGES Y ETIQUETAS --- */
+        .badge-id {
+            background: #333;
+            color: #ff0055;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 2px solid #ff0055;
             display: inline-block;
-            font-size: 1.2rem;
         }
-
-        .badge-contacto {
-            background-color: #00f2ff; /* Cian Brillante */
-            color: #000 !important; /* TEXTO NEGRO */
-            padding: 3px 10px;
+        .badge-nombre { font-weight: 900; font-size: 1.1rem; color: #000; text-transform: uppercase; }
+        
+        .label-email {
+            background-color: #00f2ff !important;
+            color: #000 !important;
+            padding: 5px 10px;
             font-weight: 800;
             border-radius: 4px;
             font-family: 'Share Tech Mono', monospace;
-            display: inline-block;
+            display: block;
             margin-bottom: 5px;
+            width: fit-content; /* Se ajusta al texto */
+            min-width: 200px;
         }
-
-        .badge-telefono {
-            background-color: #adff2f; /* Verde Lima */
-            color: #000 !important; /* TEXTO NEGRO */
-            padding: 3px 10px;
+        .label-tel {
+            background-color: #adff2f !important;
+            color: #000 !important;
+            padding: 5px 10px;
             font-weight: 800;
             border-radius: 4px;
             font-family: 'Share Tech Mono', monospace;
-            display: inline-block;
+            display: block;
+            width: fit-content;
+            min-width: 200px;
         }
-
         .message-box {
             background: #222;
             padding: 12px;
             border-radius: 8px;
             color: #fff;
-            border-left: 4px solid #ff0055;
+            border-left: 5px solid #ff0055;
+            font-size: 0.95rem;
         }
-
-        .badge-id {
-            background: #333;
-            color: #ff0055;
-            font-weight: bold;
-            padding: 10px;
-            border: 1px solid #ff0055;
-        }
+        .text-hora { color: #00f2ff; font-weight: bold; font-family: 'Share Tech Mono', monospace; }
     </style>
 </head>
 <body>
@@ -95,8 +87,7 @@
                 <a class="nav-link" href="{{ route('inicio') }}">INICIO</a>
                 <a class="nav-link" href="{{ route('menu') }}">LA CARTA</a>
                 <a class="nav-link" href="{{ route('pedido.index') }}">PEDIDOS</a>
-                <a class="nav-link" href="{{ route('nosotros') }}">NOSOTROS</a>
-                <a class="nav-link fw-bold active text-info" href="{{ route('buzon.index') }}">📥 BUZÓN</a>
+                <a class="nav-link active text-info" href="{{ route('buzon.index') }}">📥 BUZÓN</a>
             </div>
         </div>
     </nav>
@@ -108,42 +99,62 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th style="width: 80px;">ID</th>
                         <th>CLIENTE</th>
                         <th>CONTACTO</th>
                         <th>MENSAJE</th>
-                        <th>HORA</th>
+                        <th style="width: 100px;">HORA</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse($mensajes as $m)
                     <tr>
-                        <td class="text-center"><span class="badge-id">#{{ $m->id }}</span></td>
+                        <td class="text-center">
+                            <span class="badge-id">#{{ $m->id }}</span>
+                        </td>
                         <td>
                             <div class="badge-nombre">
-                                {{ strtoupper(str_replace('PQRS: ', '', $m->nombre)) }}
+                                {{ strtoupper($m->nombre) }} 
+                                @if(str_contains($m->mensaje, 'TIPO:'))
+                                    <small class="d-block text-muted" style="font-size: 0.8rem;">
+                                        ({{ strtoupper(explode('|', explode('TIPO: ', $m->mensaje)[1] ?? '')[0] ?? 'PQRS') }})
+                                    </small>
+                                @endif
                             </div>
                         </td>
                         <td>
-                            @php $partes = explode('|', $m->descripcion); @endphp
-                            <div class="badge-contacto">
-                                📧 {{ $partes[0] ?? 'N/A' }}
-                            </div><br>
-                            <div class="badge-telefono">
-                                📞 {{ $partes[1] ?? 'N/A' }}
+                            <div class="label-email">
+                                📧 {{ strtoupper($m->correo) }}
+                            </div>
+                            <div class="label-tel">
+                                📞 
+                                @if(str_contains($m->mensaje, 'TEL:'))
+                                    {{ explode('|', explode('TEL: ', $m->mensaje)[1] ?? '')[0] ?? 'S/N' }}
+                                @else
+                                    {{ $m->telefono ?? '3132194011' }}
+                                @endif
                             </div>
                         </td>
                         <td>
                             <div class="message-box">
-                                {{ $partes[2] ?? $m->descripcion }}
+                                <strong style="color: #ff0055;">DETALLE:</strong> 
+                                @if(str_contains($m->mensaje, 'DETALLE:'))
+                                    {{ strtoupper(explode('DETALLE: ', $m->mensaje)[1] ?? $m->mensaje) }}
+                                @else
+                                    {{ strtoupper($m->mensaje) }}
+                                @endif
                             </div>
                         </td>
                         <td class="text-center">
-                            <span class="fw-bold" style="color: #00f2ff;">{{ $m->created_at->format('H:i:s') }}</span>
+                            <span class="text-hora">
+                                {{ $m->created_at->format('H:i:s') }}
+                            </span>
                         </td>
                     </tr>
                     @empty
-                    <tr><td colspan="5" class="text-center py-5">SIN TRANSMISIONES...</td></tr>
+                    <tr>
+                        <td colspan="5" class="text-center py-5 text-muted">ESPERANDO TRANSMISIONES...</td>
+                    </tr>
                     @endforelse
                 </tbody>
             </table>
