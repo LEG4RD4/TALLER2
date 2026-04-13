@@ -14,11 +14,10 @@
             min-height: 100vh;
         }
 
-        /* Navbar estilo neón */
         .navbar { background: rgba(0,0,0,0.9); border-bottom: 2px solid #ff0055; backdrop-filter: blur(10px); }
         .navbar-brand { font-family: 'Bungee', cursive; color: #ff0055 !important; }
 
-        /* Contenedores con efecto cristal */
+       
         .glass-card {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(15px);
@@ -37,7 +36,6 @@
             transform: rotate(-2deg);
         }
 
-        /* Formulario Estilo Terminal */
         .form-label { font-weight: 900; color: #00f2ff; letter-spacing: 1px; font-size: 0.8rem; }
         .form-control, .form-select {
             background: rgba(0,0,0,0.5) !important;
@@ -52,7 +50,7 @@
             box-shadow: 0 0 15px rgba(255, 0, 85, 0.3);
         }
 
-        /* Botón Brutal */
+       
         .btn-monster {
             background: #ff0055;
             color: white;

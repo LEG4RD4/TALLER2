@@ -33,7 +33,7 @@
             color: #000; 
         }
 
-        /* --- BADGES Y ETIQUETAS --- */
+        
         .badge-id {
             background: #333;
             color: #ff0055;

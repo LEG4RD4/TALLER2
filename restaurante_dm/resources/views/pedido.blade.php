@@ -21,7 +21,6 @@
             min-height: 100vh;
         }
 
-        /* Navbar */
         .navbar { 
             background: rgba(0, 0, 0, 0.9); 
             border-bottom: 2px solid var(--neon-cyan);
@@ -29,7 +28,7 @@
         }
         .navbar-brand { font-family: 'Permanent Marker', cursive; color: var(--neon-cyan) !important; }
 
-        /* Contenedor del Monitor */
+       
         .monitor-frame {
             border: 2px solid #222;
             background: rgba(10, 10, 10, 0.9);
@@ -51,7 +50,7 @@
             font-weight: bold;
         }
 
-        /* Tabla Estilo Matrix */
+       
         .table { color: var(--neon-cyan); border-color: #333; }
         .table thead { background: rgba(0, 242, 255, 0.1); color: var(--neon-cyan); text-transform: uppercase; }
         .table tbody tr:hover { background: rgba(255, 0, 85, 0.05); }
@@ -63,7 +62,6 @@
             font-size: 1.2rem;
         }
 
-        /* Botón Volver Neón */
         .btn-back {
             background: transparent;
             border: 2px solid var(--neon-cyan);

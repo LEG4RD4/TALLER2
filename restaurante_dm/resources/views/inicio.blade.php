@@ -20,7 +20,6 @@
             overflow: hidden;
         }
 
-        /* Silueta blanca difuminada de fondo */
         .bg-silhouette {
             position: absolute;
             top: 50%;
@@ -42,7 +41,6 @@
         .btn-exotic { background: #ff0055; color: white; border: none; padding: 15px 40px; font-weight: 900; border-radius: 0px; clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); transition: 0.3s; text-decoration: none; display: inline-block; }
         .btn-exotic:hover { background: #fff; color: #ff0055; transform: scale(1.1); }
 
-        /* Animación de flotación */
         .floating-burger { 
             animation: float 4s ease-in-out infinite; 
             width: 100%; 
