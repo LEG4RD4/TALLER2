@@ -26,5 +26,5 @@ Route::post('/agregar-al-pedido', [ProductoController::class, 'agregarAlPedido']
 // Enviar PQRS
 Route::post('/enviar-pqrs', [ProductoController::class, 'storeMensaje'])->name('pqrs.store');
 
-// Ver Pantalla de Mensajes (Quejas y Reclamos)
-Route::get('/buzon', [ProductoController::class, 'buzon'])->name('buzon.index');
+
+Route::get('/central-mensajes', [ProductoController::class, 'buzon'])->name('buzon.index');

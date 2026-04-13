@@ -118,7 +118,7 @@
             <div class="navbar-nav ms-auto">
                 <a class="nav-link" href="{{ route('inicio') }}">INICIO</a>
                 <a class="nav-link active fw-bold" style="color: var(--neon-cyan)" href="{{ route('menu') }}">LA CARTA</a>
-                <a class="nav-link" href="{{ route('pedido.index') }}">MONITOR</a>
+                <a class="nav-link" href="{{ route('pedido.index') }}">PEDIDOS</a>
                 <a class="nav-link" href="{{ route('nosotros') }}">NOSOTROS</a>
             </div>
         </div>
