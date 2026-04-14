@@ -162,7 +162,7 @@
                 ],
                 'POCIONES RADIACTIVAS (BEBIDAS)' => [
                     ['nombre' => 'BLUE TOXIN', 'precio' => 12000, 'desc' => 'Soda de coco azul con perlas de nitrógeno.', 'img' => 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600'],
-                    ['nombre' => 'LAVA CHERRY', 'precio' => 12000, 'desc' => 'Granizado de cereza ácida con borde de sal neón.', 'img' => 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600'],
+                    ['nombre' => 'LAVA CHERRY', 'precio' => 12000, 'desc' => 'Granizado de cereza ácida con borde de sal neón.', 'img' => 'https://restauranteinsignia.com/wp-content/uploads/2025/05/Granizado-cereza.jpg'],
                     ['nombre' => 'MORTAL MOJITO', 'precio' => 18000, 'desc' => 'Ron, hierbabuena negra y esencia de dragón.', 'img' => 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?w=600'],
                     ['nombre' => 'SLIME SHAKE', 'precio' => 16000, 'desc' => 'Malteada de pistacho con hilos de chocolate verde.', 'img' => 'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=600'],
                     ['nombre' => 'CYBER COLA', 'precio' => 7000, 'desc' => 'La clásica, servida con hielo seco.', 'img' => 'https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600'],
@@ -175,12 +175,12 @@
                     ['nombre' => 'OREO OVERLOAD', 'precio' => 13000, 'desc' => 'Cheesecake de Oreo con jeringa de chocolate.', 'img' => 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=600'],
                     ['nombre' => 'RED VELVET GHOST', 'precio' => 15000, 'desc' => 'Pastel rojo intenso con crema de queso fantasmagorica.', 'img' => 'https://images.unsplash.com/photo-1616541823729-00fe0aacd32c?w=600'],
                     ['nombre' => 'NEON DONUTS', 'precio' => 10000, 'desc' => 'Par de donas con glaseado que brilla bajo luz UV.', 'img' => 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600'],
-                    ['nombre' => 'WAFFLE MATRIX', 'precio' => 18000, 'desc' => 'Waffle negro con helado de vainilla y frutas locas.', 'img' => 'https://images.unsplash.com/photo-1504113888839-1c8003673ef4?w=600'],
+                    ['nombre' => 'WAFFLE MATRIX', 'precio' => 18000, 'desc' => 'Waffle negro con helado de vainilla y frutas locas.', 'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs8FlfRShoDpT5Ddl7RU-JzxECt7Jg21fEgA&s'],
                     ['nombre' => 'BROWNIE BYTES', 'precio' => 12000, 'desc' => 'Brownie melcochudo con trozos de galleta.', 'img' => 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=600'],
                     ['nombre' => 'ICE CREAM GLITCH', 'precio' => 9000, 'desc' => '3 bolas de helado con toppings explosivos.', 'img' => 'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=600'],
-                    ['nombre' => 'CHURRO CIRCUIT', 'precio' => 11000, 'desc' => 'Churros en espiral con salsa de arequipe quemado.', 'img' => 'https://images.unsplash.com/photo-1578323851363-379b1836f138?w=600'],
+                    ['nombre' => 'CHURRO CIRCUIT', 'precio' => 11000, 'desc' => 'Churros en espiral con salsa de arequipe quemado.', 'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbtWlq2192lnMBUGC1ahtxmLKBKQypTwe8DQ&s'],
                     ['nombre' => 'PANNA COTTA VOID', 'precio' => 14000, 'desc' => 'De frutos rojos con base de galleta negra.', 'img' => 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600'],
-                    ['nombre' => 'APPLE CRUNCH ERROR', 'precio' => 13000, 'desc' => 'Crocante de manzana con canela y mucho caramelo.', 'img' => 'https://images.unsplash.com/photo-1568571780765-9276ac417592?w=600'],
+                    ['nombre' => 'APPLE CRUNCH ERROR', 'precio' => 13000, 'desc' => 'Crocante de manzana con canela y mucho caramelo.', 'img' => 'https://sabor.eluniverso.com/wp-content/uploads/2023/07/postre_crocante_de_manzana.jpg'],
                 ]
             ];
         @endphp
